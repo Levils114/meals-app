@@ -50,17 +50,18 @@ class MealDetailScreen extends StatelessWidget {
             _createSectionTilte(context, 'Ingredientes'),
             _createSectionContainer(
               ListView.builder(
-                  itemCount: meal.ingredients.length,
-                  itemBuilder: (_, index) => Card(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 5,
-                            horizontal: 10,
-                          ),
-                          child: Text(meal.ingredients[index]),
-                        ),
-                        color: Theme.of(context).accentColor,
-                      )),
+                itemCount: meal.ingredients.length,
+                itemBuilder: (_, index) => Card(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 10,
+                    ),
+                    child: Text(meal.ingredients[index]),
+                  ),
+                  color: Theme.of(context).accentColor,
+                ),
+              ),
             ),
             _createSectionTilte(context, 'Passos'),
             _createSectionContainer(
@@ -83,6 +84,12 @@ class MealDetailScreen extends StatelessWidget {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.star),
+        onPressed: () {
+          Navigator.of(context).pop(meal.title);
+        },
       ),
     );
   }

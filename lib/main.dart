@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/screens/categories_meals_screen.dart';
 import 'package:meals_app/screens/categories_screen.dart';
 import 'package:meals_app/screens/meal_detail_screen.dart';
+import 'package:meals_app/screens/settings_screen.dart';
 import 'package:meals_app/screens/tabs_screen.dart';
 import 'package:meals_app/utils/app_routes.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'DeliMeals',
+      title: 'Vamos Cozinhar?',
       theme: ThemeData(
         primarySwatch: Colors.pink,
         accentColor: Colors.amber,
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.HOME: (_) => TabsScreen(),
         AppRoutes.CATEGORIES_MEALS: (_) => CategoriesMealsScreen(),
         AppRoutes.MEAL_DETAIL: (_) => MealDetailScreen(),
+        AppRoutes.SETTINGS: (_) => SettingsScreen(),
       },
       onUnknownRoute: (settings) {
         return CupertinoPageRoute(
