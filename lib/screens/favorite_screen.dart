@@ -11,11 +11,15 @@ class FavoriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: favorites.length,
-      itemBuilder: (_, index) => MealItemWidget(
-        meal: favorites[index],
-      ),
-    );
+    return favorites.isEmpty
+        ? Center(
+            child: Text('Nenhuma comida foi favorita 😞!'),
+          )
+        : ListView.builder(
+            itemCount: favorites.length,
+            itemBuilder: (_, index) => MealItemWidget(
+              meal: favorites[index],
+            ),
+          );
   }
 }

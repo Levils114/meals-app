@@ -41,9 +41,9 @@ class _MyAppState extends State<MyApp> {
 
   void _addFavorite(Meal meal) {
     setState(() {
-      _favorites = [..._favorites, meal];
-
-      print(_favorites);
+      _favorites.contains(meal)
+          ? _favorites.remove(meal)
+          : _favorites.add(meal);
     });
   }
 

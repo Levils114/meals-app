@@ -37,9 +37,6 @@ class MealDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Meal meal = ModalRoute.of(context).settings.arguments;
 
-    /* print(favorites.contains(meal.id)); */
-    favorites.map((e) => print(e.title));
-
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title),
@@ -94,8 +91,7 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child:
-            Icon(favorites.contains(meal.id) ? Icons.star : Icons.star_border),
+        child: Icon(favorites.contains(meal) ? Icons.star : Icons.star_border),
         onPressed: () => addFavoriteFunction(meal),
       ),
     );
